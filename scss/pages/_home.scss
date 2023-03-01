@@ -1,6 +1,13 @@
 .banner{
     &__wrapper{
         min-height: calc(100vh - 60px);
+        @include mediaQuery($mobile){
+            margin-top: 5rem;
+        min-height: auto;
+          flex-direction: column;
+          justify-content: flex-start;
+          gap: 5rem;
+        }
     }
 
     &__content {
@@ -8,12 +15,8 @@
         width: 100%;
         h1{
             font-size: clamp(3rem,6vw,6rem);
-            font-weight: bold;
             margin-bottom: 2rem;
             line-height: 1.2;
-            span{
-                color: $clr-primary;
-            }
         }
         p{
             font-size: 1.8rem;
@@ -31,10 +34,10 @@
 // PRODUCT
 
 .product__cards{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 2rem;
-    border-radius: 1rem;
+    @include grid(4, 2rem);
+    @include mediaQuery($mobile){
+        @include grid(1, 2rem);
+    }
 }
 
 .product__item{
@@ -164,7 +167,10 @@
     background-size: cover;
     background-position-x: 250px;
     background-position-y: -360px;
-
+    @include mediaQuery($mobile){
+        background-position-x: 0;
+        background-position-y: 0;
+    }
     &__content{
         color: $clr-light;
         background-color: $clr-primary;
@@ -174,6 +180,12 @@
         display: grid;
         place-items: center;
         justify-content: flex-start;
+        @include mediaQuery($mobile){
+            width: 100%;
+            padding: 2rem;
+            margin: 2rem 0;
+            background-color: rgba($clr-primary, 0.8);
+        }
         &::before{
             content: '';
             position: absolute;
@@ -194,7 +206,6 @@
             }
             h2{
                 font-size: clamp(3rem, 6vw, 5rem);
-                font-weight: bold;
                 margin: 3rem 0;
             }
             p{
@@ -208,9 +219,11 @@
 // WORK
 
 .work__wrapper{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 2rem;
+    @include grid(4, 2rem);
+    @include mediaQuery($mobile){
+        @include grid(1, 2rem);
+    }
+
     .work__card{
         padding: 2rem;
         border-radius: 1rem;
@@ -224,11 +237,9 @@
             font-size: 2rem;
             margin: 2rem;
             color: $clr-primary;
-            font-weight: bold;
         }
         p{
             opacity: .5;
-            font-weight: bold;
         }
     }
 }
@@ -241,23 +252,27 @@
         padding: 2rem 8rem;
         background-color: lighten($clr-primary-light, 20);
         border-radius: 3rem;
-        display: grid;
-        grid-template-columns: 2fr 1fr;
+        @include gridUneven(2fr 1fr, 2rem);
+        @include mediaQuery($mobile){
+            padding: 2rem;
+            @include gridUneven(1fr, 2rem);
         height: 100%;
-        max-height: 44rem;
+        max-height: 64rem;
         overflow: hidden;
     }
-
+}
+    &__img{
+        @include mediaQuery($mobile){
+            text-align: center;
+            margin-top: 5rem;
+    }
+}
     &__content{
         max-width: 55rem;
         width: 100%;
         h2{
             font-size: clamp(3rem, 6vw, 5rem);
-            font-weight: bold;
             margin: 4rem 0 3rem;
-        }
-        span{
-            color: $clr-primary;
         }
         p{
             font-size: 2rem;
@@ -273,14 +288,13 @@
 
 .testimonials{
     &__wrapper{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr ;
-        grid-gap: 2rem;
+        @include grid(3, 2rem);
+        @include mediaQuery($mobile){
+            @include grid(1, 2rem);
     }
+}
     &__card{
-        display: grid;
-        grid-template-columns: 1fr 1.8fr;
-        grid-gap: 1rem;
+        @include gridUneven(1fr 1.8fr, 2rem);
         border-radius: 1rem;
         box-shadow: $shadow;
         padding: 1rem;
@@ -304,7 +318,6 @@
             transition: .5s ease;
         }
         h4{
-            font-weight: bold;
             font-size: 2rem;
             line-height: 1;
         }
@@ -364,10 +377,6 @@
         text-align: center;
         h2{
             font-size: clamp(2rem ,6vw, 5rem);
-            font-weight: bold;
-            span{
-                color: $clr-primary;
-            }
         }
          p{
                 opacity: 0.8;
@@ -390,7 +399,12 @@
                     border-radius: .5rem;
                     transform: translateX(-12px);
                     border: 3px solid $clr-light;
+                    @include mediaQuery($mobile){
+                        width: 28rem;
+                        margin-top: 1rem;
+                        transform: translateX(0rem);
                 }
+            }
             }
     }
 }
@@ -411,7 +425,6 @@
         cursor: pointer;
         h3{
             font-size: 2.5rem;
-            font-weight: bold;
         }
     }
     &__answer{
