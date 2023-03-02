@@ -10,19 +10,26 @@
    </head>
 <body>
 
-   <div class="header">
+  
+<div class="header">
     <div class="container">
         <div class="header__wrapper d--flex justify--between align--center">
-            <div class="branding"><a href="#">Food <span>Factory</span></a></div>
+            <div class="branding"><a href="#">Food          <span>Factory</span></a>
+            </div> 
+            <button class="btn__show">
+                <i class="fas fa-bars"></i>
+            </button> 
             <nav class="header__nav py--1">
+                <button class="btn__back">
+                    <i class="fas fa-arrow-right"></i>
+                  </button>
                 <ul class="d--flex gap--4 align--center">
-                    <li><a href="#"class="active">Home</a></li>
+                    <li><a href="#" class="active">Home</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Our Menu</a></li>
                     <li><a href="#">Book Table</a></li>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#" class="btn btn-primary">Sign Up</a></li>
-                    
                 </ul>
             </nav>
         </div>
@@ -31,7 +38,7 @@
 
    </header>
 
-   <section class="banner">
+<section class="banner">
     <div class="container">
         <div class="banner__wrapper d--flex align--center justify--between">
             <div class="banner__content">
@@ -52,7 +59,7 @@
     </div>
    </section>
 
-   <section class="product py--6">
+<section class="product py--6">
     <div class="container">
         <div class="block__header">
             <span> Feature Product</span>
@@ -144,7 +151,7 @@
     </div>
    </section> 
 
-   <section class="categories py--6">
+<section class="categories py--6">
     <div class="container">
       <div class="block__header">
         <span>Top Categories</span>
@@ -376,7 +383,6 @@
 </div>
 </section>
 
-
 <section class="app py--6">
     <div class="container">
         <div class="app__wrapper">
@@ -574,11 +580,6 @@
 <p class="copyright">Copyright &copy; Food Factory 2022 All Right Reserved</p>       
 
 
-
-
-
-
-
 <script>
 const questions= document.querySelectorAll('.faq__question');
 
@@ -604,7 +605,7 @@ questions.forEach(question => {
         })
     })
 </script>
-
+<script src="./script.js"></script>
 
 </body>
 </html>
